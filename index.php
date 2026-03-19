@@ -10,20 +10,36 @@
     <div class="registration-form">
         <h2>Регистрация</h2>
         
-        <form action="action.php" method="POST">
+      
+        <form action="action.php" method="POST" autocomplete="off">
+            
+            
+            <input type="text" name="fake_username" style="display:none;" tabindex="-1" autocomplete="off">
+            <input type="password" name="fake_password" style="display:none;" tabindex="-1" autocomplete="off">
+            
             <div class="form-group">
                 <label for="name">Имя:</label>
-                <input type="text" id="name" name="name" placeholder="Введите имя" required>
+                <input type="text" 
+                       id="name" 
+                       name="name" 
+                       placeholder="Введите имя" 
+                       autocomplete="name"
+                       required>
             </div>
 
             <div class="form-group">
                 <label for="email">Почта:</label>
-                <input type="email" id="email" name="email" placeholder="name@example.ru" required>
+                <input type="email" 
+                       id="email" 
+                       name="email" 
+                       placeholder="name@example.ru" 
+                       autocomplete="email"
+                       required>
             </div>
 
             <div class="form-group">
                 <label for="gender">Пол:</label>
-                <select id="gender" name="gender" required>
+                <select id="gender" name="gender" autocomplete="sex" required>
                     <option value="">Выберите пол</option>
                     <option value="male">Мужской</option>
                     <option value="female">Женский</option>
@@ -33,12 +49,24 @@
 
             <div class="form-group">
                 <label for="password">Пароль:</label>
-                <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+               
+                <input type="password" 
+                       id="password" 
+                       name="password" 
+                       placeholder="Введите пароль" 
+                       autocomplete="new-password"
+                       required>
             </div>
 
             <div class="form-group">
                 <label for="confirm_password">Подтвердите пароль:</label>
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="Повторите пароль" required>
+                
+                <input type="password" 
+                       id="confirm_password" 
+                       name="confirm_password" 
+                       placeholder="Повторите пароль" 
+                       autocomplete="new-password"
+                       required>
             </div>
 
             <div class="checkbox-group">
