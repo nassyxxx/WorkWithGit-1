@@ -113,6 +113,20 @@ else {
     echo "Ошибка при создании каталога.<br>";
 }
 
+#задание 2
+
+$folderOld = "test";
+$folderNew = "www";
+
+if (file_exists($folderOld)) {
+    if (rename($folderOld, $folderNew)) {
+        echo "Папка '$folderOld' переименована в '$folderNew'.<br><br>";
+    } else {
+        echo "Ошибка при переименовании папки.<br><br>";
+    }
+} else {
+    echo "Папка '$folderOld' не найдена.<br><br>";
+}
 
 
 ?>
