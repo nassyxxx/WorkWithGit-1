@@ -53,6 +53,19 @@ if (copy($sourceFile, $copyFile)) {
     echo " Не удалось создать копию файла.<br><br>";
 }
 
+#задание №6
+
+if (file_exists($copyFile)) {
+    $fileSize = filesize($copyFile);  
+    
+    echo "Размер файла '$copyFile':<br>";
+    echo "В байтах: $fileSize байт<br>";
+    echo "В килобайтах:" . round($fileSize / 1024, 2) . " КБ<br>";
+    echo "В мегабайтах:" . round($fileSize / 1024 / 1024, 2) . " МБ<br><br>";
+} else {
+    echo "Файл '$copyFile' не найден.<br><br>";
+}
+
 
 
 ?>
