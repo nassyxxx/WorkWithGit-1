@@ -129,4 +129,26 @@ if (file_exists($folderOld)) {
 }
 
 
+#задание 3
+
+if (file_exists($folderNew ) && is_dir($folderNew)) {
+    $files = array_diff(scandir($folderNew ), ['.', '..']);
+    foreach ($files as $file) {
+        $filePath = $folderNew  . DIRECTORY_SEPARATOR . $file;
+        is_dir($filePath) ? rmdir($filePath) : unlink($filePath);
+    }
+    
+   
+    if (rmdir($folderNew)) {
+        echo "Папка '$folderNew' успешно удалена.<br><br>";
+    } else {
+        echo "Ошибка при удалении папки '$folderNew'.<br><br>";
+    }
+} else {
+    echo " Папка '$folderNew ' не найдена или не является папкой.<br><br>";
+}
+
+
+
+
 ?>
