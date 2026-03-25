@@ -20,10 +20,28 @@ echo "Содержимое файла: <strong>$content</strong><br><br>";
 #задание №3
 
 if (rename("test.txt", "mir.txt")) {
-    echo "Файл переименован: <br>";
+    echo "Файл переименован <br>";
 } else {
     echo "Не удалось переименовать файл";
 }
+
+#задание №4
+if(mkdir("folder")) {
+    echo "Каталог создан.<br>";
+}
+else {
+    echo "Ошибка при создании каталога.<br>";
+}
+
+$newPath = "folder" . "/" . "mir.txt";
+
+if (rename("mir.txt", $newPath)) {
+    echo "Файл  перемещён в папку.<br>";
+    echo "Новый путь: <strong>$newPath</strong><br><br>";
+} else {
+    echo "Не удалось переместить файл.<br><br>";
+}
+
 
 
 
