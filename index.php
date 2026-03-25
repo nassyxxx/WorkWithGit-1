@@ -66,6 +66,19 @@ if (file_exists($copyFile)) {
     echo "Файл '$copyFile' не найден.<br><br>";
 }
 
+#задание 7
+
+if (file_exists($copyFile)) {
+
+    if (unlink($copyFile)) {
+        echo "Файл '$copyFile' успешно удалён.<br><br>";
+    } else {
+        echo "Ошибка при удалении файла '$copyFile'.<br><br>";
+    }
+} else {
+    echo "Файл '$$copyFile' не найден.<br><br>";
+}
+
 
 
 ?>
