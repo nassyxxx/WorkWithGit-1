@@ -42,6 +42,16 @@ if (rename("mir.txt", $newPath)) {
     echo "Не удалось переместить файл.<br><br>";
 }
 
+#задание №5
+
+$sourceFile = $newPath;
+$copyFile = "folder" . "/world.txt"; 
+
+if (copy($sourceFile, $copyFile)) {
+    echo " Копия создана: '$sourceFile' → '$copyFile'<br><br>";
+} else {
+    echo " Не удалось создать копию файла.<br><br>";
+}
 
 
 
