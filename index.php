@@ -171,4 +171,38 @@ foreach ($folderNames as $name) {
 }
 echo "<br>";
 
+#задание 5
+
+$currentDir = getcwd();
+$jpgFiles = [];
+
+
+if (is_dir($currentDir)) {
+    $files = scandir($currentDir);
+    
+    foreach ($files as $file) {
+
+        if ($file === '.' || $file === '..') continue;
+        
+        if (is_file($file) && preg_match('/\.jpe?g$/i', $file)) {
+            $jpgFiles[] = $file;
+        }
+    }
+}
+
+
+if (count($jpgFiles) > 0) {
+    echo "Найдено " . count($jpgFiles) . " файл(ов) .jpg:<br><br>";
+    echo "<ul>";
+    foreach ($jpgFiles as $jpg) {
+        $size = filesize($jpg);
+        echo "<li>$jpg — $size байт</li>";
+    }
+    echo "</ul>";
+} else {
+    echo "В текущей папке нет файлов с расширением .jpg<br>";
+  
+}
+
+
 
