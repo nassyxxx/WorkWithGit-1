@@ -79,6 +79,31 @@ if (file_exists($copyFile)) {
     echo "Файл '$$copyFile' не найден.<br><br>";
 }
 
+#задание 8
+$file1 = "folder/world.txt";
+
+echo "Файл '$file1': ";
+if (file_exists($file1)) {
+
+    echo "Существует<br>";
+    
+} else {
+    echo "Не существует<br>";
+}
+
+echo "<br>";
+
+$file2 = "folder/mir.txt";
+echo "Файл '$file2': ";
+
+if (file_exists($file2)) {
+    echo "Существует<br>";
+} else {
+    echo "Не существует<br>";
+}
+
+
+
 
 
 ?>
