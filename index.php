@@ -148,7 +148,27 @@ if (file_exists($folderNew ) && is_dir($folderNew)) {
     echo " Папка '$folderNew ' не найдена или не является папкой.<br><br>";
 }
 
+#задание 4
+
+if (!file_exists("test")) {
+    mkdir("test");
+}
+
+$folderNames = ["изображения", "документы", "видео", "музыка"];
+
+foreach ($folderNames as $name) {
+    $path = "test/" . $name;
+    if (!file_exists($path)) {
+        if(mkdir($path)) {
+    	    echo "Каталог создан.<br>";
+	}
+	else {
+    	    echo "Ошибка при создании каталога.<br>";
+	}
+    } else {
+        echo "Папка уже существует: test/$name<br>";
+    }
+}
+echo "<br>";
 
 
-
-?>
