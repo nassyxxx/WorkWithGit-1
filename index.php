@@ -91,4 +91,25 @@ $weekDays = [
 $dayOfWeek = date('w', mktime(0, 0, 0, 2, 2, 2000));
 echo "2 февраля 2000 года был(а): " . $weekDays[$dayOfWeek] . "<br>";
 
+    #задание 6
+
+$week = [
+    0 => 'Воскресенье',
+    1 => 'Понедельник',
+    2 => 'Вторник',
+    3 => 'Среда',
+    4 => 'Четверг',
+    5 => 'Пятница',
+    6 => 'Суббота'
+];
+
+$todayIndex = date('w');
+echo "1. Сегодня: " . $week[$todayIndex] . "<br>";
+
+$birthday1Index = date('w', mktime(0, 0, 0, 6, 12, 2016));
+echo "2. 12.06.2016 был: " . $week[$birthday1Index] . "<br>";
+
+$myBirthdayIndex = date('w', mktime(0, 0, 0, 12, 3, 2007));
+echo "3. 03.12.2007 (мой день рождения) был: " . $week[$myBirthdayIndex] . "<br>";
+
 ?>
