@@ -65,5 +65,9 @@ $difference = $current - $past;
 
 echo "Разница в секундах: " . $difference . "<br>";
 
+    #задание 3
+date_default_timezone_set('Europe/Moscow');
+echo date('Y.m.d H:i:s')  . "<br>";
+
 
 ?>
