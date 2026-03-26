@@ -69,5 +69,13 @@ echo "Разница в секундах: " . $difference . "<br>";
 date_default_timezone_set('Europe/Moscow');
 echo date('Y.m.d H:i:s')  . "<br>";
 
+    #задание 4
+
+$currentYear = date('Y');
+
+$september = mktime(0, 0, 0, 9, 1, $currentYear);
+
+echo date('Y.m.d', $september) . "<br>";
+
 
 ?>
