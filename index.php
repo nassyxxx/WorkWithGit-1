@@ -22,7 +22,7 @@ restore_error_handler();
 function divide($a, $b) {
     if ($b == 0) {
         $msg = "Ошибка: деление на ноль (a=$a, b=$b)";
-        file_put_contents('log.txt', date('Y-m-d H:i:s') . " - $msg\n", FILE_APPEND);
+        file_put_contents('log.txt', date('Y-m-d H:i:s') . " - $msg<br>", FILE_APPEND);
         throw new DivisionByZeroError($msg);
     }
     return $a / $b;
@@ -45,10 +45,17 @@ try {
     echo $countries['Germany'];
 } catch (ErrorException $e) {
     $msg = "Ошибка доступа к массиву: " . $e->getMessage();
-    echo $msg . "\n";
+    echo $msg . "<br>";
 }
 
 restore_error_handler();
+
+#ЧАСТЬ 2
+
+    #задание 1
+
+$time = mktime(10, 25, 0, 3, 15, 2025);
+echo "Timestamp для 15.03.2025 10:25:00: " . $time . "<br>";
 
 
 ?>
