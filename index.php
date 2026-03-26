@@ -112,4 +112,60 @@ echo "2. 12.06.2016 был: " . $week[$birthday1Index] . "<br>";
 $myBirthdayIndex = date('w', mktime(0, 0, 0, 12, 3, 2007));
 echo "3. 03.12.2007 (мой день рождения) был: " . $week[$myBirthdayIndex] . "<br>";
 
+
+    #задание 7
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $date1 = $_POST['date1'] ?? '';
+    $date2 = $_POST['date2'] ?? '';
+    
+    try {
+        $ts1 = strtotime($date1);
+        $ts2 = strtotime($date2);
+        
+        if ($ts1 === false || $ts2 === false) {
+            throw new Exception("Неверный формат даты. Используйте формат 'ГГГГ-ММ-ДД'");
+        }
+        
+        $greater = ($ts1 > $ts2) ? $date1 : $date2;
+        echo "<p>Большая дата: <strong>" . htmlspecialchars($greater) . "</strong></p>";
+        
+    } catch (Exception $ex) {
+        echo '<p style="color:red;">Исключение: ' . $ex->getMessage() . '</p>';
+    }
+}
+
+
+        
+
 ?>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form method="POST">
+    <label>Дата 1 (ГГГГ-ММ-ДД): 
+        <input type="text" 
+               name="date1" 
+               pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" 
+               placeholder="2025-12-31"
+               required>
+    </label><br><br>
+    
+    <label>Дата 2 (ГГГГ-ММ-ДД): 
+        <input type="text" 
+               name="date2" 
+               pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" 
+               placeholder="2025-12-31"
+               required>
+    </label><br><br>
+    
+    <button type="submit">Сравнить даты</button>
+</form>
+</body>
+</html>
