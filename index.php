@@ -168,6 +168,14 @@ $date = date_create(str_replace('.', '-', $originalDate));
 date_modify($date, '-3 days');
 echo "После вычитания 3 дней: " . date_format($date, 'd.m.Y') . "<br>";
 echo "<br>";
+ 
+    #задание 10
+ 
+$today = date_create(date('Y-m-d'));
+$newYearObj = date_create(($currentYear + 1) . '-01-01');
+$interval = date_diff($today, $newYearObj);
+echo "До Нового Года осталось: " . $interval->days . " дней<br>";
+echo "<br>";
 
 ?>
 
