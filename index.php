@@ -17,7 +17,22 @@ try {
 
 restore_error_handler();
 
+    #задание 2
 
+function divide($a, $b) {
+    if ($b == 0) {
+        $msg = "Ошибка: деление на ноль (a=$a, b=$b)";
+        file_put_contents('log.txt', date('Y-m-d H:i:s') . " - $msg\n", FILE_APPEND);
+        throw new DivisionByZeroError($msg);
+    }
+    return $a / $b;
+}
+
+try {
+    echo divide(10, 0);
+} catch (DivisionByZeroError $e) {
+    echo "Перехвачено: " . $e->getMessage() . "<br>";
+}
     
 
 
