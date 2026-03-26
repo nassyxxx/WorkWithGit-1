@@ -34,8 +34,21 @@ try {
     echo "Перехвачено: " . $e->getMessage() . "<br>";
 }
     
+    #задание 3
+set_error_handler(function($severity, $message, $file, $line) {
+    throw new ErrorException($message, 0, $severity, $file, $line);
+});
 
+$countries = ['Spain' => 'Madrid', 'Russia' => 'Moscow'];
 
+try {
+    echo $countries['Germany'];
+} catch (ErrorException $e) {
+    $msg = "Ошибка доступа к массиву: " . $e->getMessage();
+    echo $msg . "\n";
+}
+
+restore_error_handler();
 
 
 ?>
