@@ -134,7 +134,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+    #задание 8
 
+$originalDate = '2025-12-31'; 
+
+$timestamp = strtotime($originalDate);
+$newFormat = date('d-m-Y', $timestamp); 
+
+echo "Исходная дата: $originalDate<br>";
+echo "Преобразованная дата: $newFormat<br>";
+echo "<br>"
         
 
 ?>
