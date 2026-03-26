@@ -143,8 +143,31 @@ $newFormat = date('d-m-Y', $timestamp);
 
 echo "Исходная дата: $originalDate<br>";
 echo "Преобразованная дата: $newFormat<br>";
-echo "<br>"
+echo "<br>";
         
+    #задание 9
+$originalDate = '2000.02.03';
+
+// 1. Прибавляем 2 дня к исходной дате
+$date = date_create(str_replace('.', '-', $originalDate));
+date_modify($date, '2 days');
+echo "После добавления 2 дней: " . date_format($date, 'd.m.Y') . "<br>";
+
+// 2. Прибавляем 1 месяц и 3 дня к исходной дате
+$date = date_create(str_replace('.', '-', $originalDate));
+date_modify($date, '1 month 3 days');
+echo "После добавления 1 месяца и 3 дней: " . date_format($date, 'd.m.Y') . "<br>";
+
+// 3. Прибавляем 1 год к исходной дате
+$date = date_create(str_replace('.', '-', $originalDate));
+date_modify($date, '1 year');
+echo "После добавления 1 года: " . date_format($date, 'd.m.Y') . "<br>";
+
+// 4. Отнимаем 3 дня от исходной даты
+$date = date_create(str_replace('.', '-', $originalDate));
+date_modify($date, '-3 days');
+echo "После вычитания 3 дней: " . date_format($date, 'd.m.Y') . "<br>";
+echo "<br>";
 
 ?>
 
@@ -153,7 +176,7 @@ echo "<br>"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор</title>
+    <title>Лаба12</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
