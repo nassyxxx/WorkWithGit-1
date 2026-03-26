@@ -57,5 +57,13 @@ restore_error_handler();
 $time = mktime(10, 25, 0, 3, 15, 2025);
 echo "Timestamp для 15.03.2025 10:25:00: " . $time . "<br>";
 
+    #задание 2
+
+$past = mktime(8, 5, 59, 10, 2, 1990);
+$current = time();
+$difference = $current - $past;
+
+echo "Разница в секундах: " . $difference . "<br>";
+
 
 ?>
