@@ -11,6 +11,10 @@ class Rabotnik {
    public function getAge() {
         return $this->age;
     }
+
+    public function getSalary() {
+        return $this->salary;
+    }
 }
 
 $worker1 = new Rabotnik();
@@ -32,6 +36,7 @@ echo "Сумма возрастов: " . $sumAge . "<br>";
 
 echo "Имя работника 1: " . $worker1->getName() . "<br>";
 echo "Возраст работника 1: " . $worker1->getAge() . "<br>";
+echo "Зарплата работника 1: " . $worker1->getSalary() . "<br>";
 
 
 ?>
