@@ -3,6 +3,10 @@ class Rabotnik {
     public $name;
     public $age;
     public $salary;
+
+    public function getName() {
+        return $this->name;
+    }
 }
 
 $worker1 = new Rabotnik();
@@ -19,8 +23,10 @@ $worker2->salary = 60000;
 $sumSalary = $worker1->salary + $worker2->salary;
 $sumAge = $worker1->age + $worker2->age;
 
-echo "Сумма зарплат: " . $sumSalary . "\n";
-echo "Сумма возрастов: " . $sumAge . "\n";
+echo "Сумма зарплат: " . $sumSalary . "<br>";
+echo "Сумма возрастов: " . $sumAge . "<br>";
+
+echo "Имя работника 1: " . $worker1->getName() . "<br>";
 
 ?>
 
