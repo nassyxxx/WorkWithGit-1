@@ -12,8 +12,14 @@ class Rabotnik {
         return $this->age;
     }
 
-    public function getSalary() {
-        return $this->salary;
+       public function getSalary(...$otherWorkers) {
+        $total = $this->salary;
+        
+        foreach ($otherWorkers as $worker) {
+            $total += $worker->salary;
+        }
+        
+        return $total;
     }
 }
 
@@ -37,6 +43,8 @@ echo "Сумма возрастов: " . $sumAge . "<br>";
 echo "Имя работника 1: " . $worker1->getName() . "<br>";
 echo "Возраст работника 1: " . $worker1->getAge() . "<br>";
 echo "Зарплата работника 1: " . $worker1->getSalary() . "<br>";
+
+echo "Общая сумма зарплат (через getSalary): " . $worker1->getSalary($worker2) . "<br>";
 
 
 ?>
