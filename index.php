@@ -8,20 +8,16 @@ class Rabotnik {
         return $this->name;
     }
 
-    public function setAge($newAge) {
-        if ($newAge >= 18) {
-            $this->age = $newAge;
-            echo "Возраст изменен на: " . $newAge . "<br>";
-        } else {
-            echo "Вам работать в нашей компании еще рано<br>";
-        }
+     public function setAge($newAge) {
+        $this->checkAge($newAge);
     }
 
-   public function checkAge() {
-        if ($this->age >= 18) {
-            return true;
+     private function checkAge($ageToCheck) {
+        if ($ageToCheck >= 18) {
+            $this->age = $ageToCheck;
+            echo "Возраст изменен на: " . $ageToCheck . "<br>";
         } else {
-            return false;
+            echo "Вам работать в нашей компании еще рано<br>";
         }
     }
 
@@ -87,14 +83,7 @@ echo "Текущий возраст: " . $worker3->showAge() . "<br>";
 
 echo "<br>";
 
-$worker4 = new Rabotnik();
 
-$worker4->name = "Анна";
-$worker4->setAge(5);
-$worker4->salary = 20000;
-
-echo $worker1->getName() . " (25 лет): " . ($worker1->checkAge() ? "true" : "false") . "<br>";
-echo $worker4->getName() . " (5 лет): " . ($worker4->checkAge() ? "true" : "false") . "<br>";
 
 ?>
 
