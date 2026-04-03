@@ -17,6 +17,14 @@ class Rabotnik {
         }
     }
 
+   public function checkAge() {
+        if ($this->age >= 18) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
    public function showAge() {
         return $this->age;
     }
@@ -48,12 +56,16 @@ $worker2->salary = 60000;
 $sumSalary = $worker1->salary + $worker2->salary;
 $sumAge = $worker1->showAge() + $worker2->showAge();
 
+
 echo "Сумма зарплат: " . $sumSalary . "<br>";
 echo "Сумма возрастов: " . $sumAge . "<br>";
+echo "<br>";
 
 echo "Имя работника 1: " . $worker1->getName() . "<br>";
 echo "Возраст работника 1: " . $worker1->showAge() . "<br>";
 echo "Зарплата работника 1: " . $worker1->getSalary() . "<br>";
+
+echo "<br>";
 
 echo "Общая сумма зарплат (через getSalary): " . $worker1->getSalary($worker2) . "<br>";
 
@@ -71,8 +83,18 @@ $worker3->setAge(16);
 
 echo "<br>Попытка установить возраст 25:<br>";
 $worker3->setAge(25);
-echo "Текущий возраст: " . $worker3->getAge() . "<br>";
+echo "Текущий возраст: " . $worker3->showAge() . "<br>";
 
+echo "<br>";
+
+$worker4 = new Rabotnik();
+
+$worker4->name = "Анна";
+$worker4->setAge(5);
+$worker4->salary = 20000;
+
+echo $worker1->getName() . " (25 лет): " . ($worker1->checkAge() ? "true" : "false") . "<br>";
+echo $worker4->getName() . " (5 лет): " . ($worker4->checkAge() ? "true" : "false") . "<br>";
 
 ?>
 
