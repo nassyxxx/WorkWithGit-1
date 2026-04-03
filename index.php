@@ -9,7 +9,12 @@ class Rabotnik {
     }
 
     public function setAge($newAge) {
-        $this->age = $newAge;
+        if ($newAge >= 18) {
+            $this->age = $newAge;
+            echo "Возраст изменен на: " . $newAge . "<br>";
+        } else {
+            echo "Вам работать в нашей компании еще рано<br>";
+        }
     }
 
    public function showAge() {
@@ -51,6 +56,22 @@ echo "Возраст работника 1: " . $worker1->showAge() . "<br>";
 echo "Зарплата работника 1: " . $worker1->getSalary() . "<br>";
 
 echo "Общая сумма зарплат (через getSalary): " . $worker1->getSalary($worker2) . "<br>";
+
+echo "<br>";
+
+$worker3 = new Rabotnik();
+
+$worker3->name = "Олег";
+$worker3->salary = 75000;
+
+echo "Имя работника 3: " . $worker3->getName() . "<br>";
+
+echo "Попытка установить возраст 16:<br>";
+$worker3->setAge(16);
+
+echo "<br>Попытка установить возраст 25:<br>";
+$worker3->setAge(25);
+echo "Текущий возраст: " . $worker3->getAge() . "<br>";
 
 
 ?>
