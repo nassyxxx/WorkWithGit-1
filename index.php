@@ -47,6 +47,19 @@ class Rectangle extends Figure implements Area
         $this->number_side = self::SIDES_COUNT;
     }
 
+    public function getArea()
+    {
+        $this->area = $this->a * $this->b;
+        return $this->area;
+    }
+
+
+    public function infoAbout()
+    {
+        return "Это класс прямоугольника. У него " . self::SIDES_COUNT . " стороны.";
+    }
+
+
     public function getA() { return $this->a; }
     public function getB() { return $this->b; }
 }
@@ -67,6 +80,19 @@ class Triangle extends Figure implements Area
         $this->number_side = self::SIDES_COUNT;
     }
 
+    public function getArea()
+    {
+        $p = ($this->a + $this->b + $this->c) / 2;
+        $this->area = sqrt($p * ($p - $this->a) * ($p - $this->b) * ($p - $this->c));
+        return round($this->area, 2);
+    }
+
+
+    public function infoAbout()
+    {
+        return "Это класс треугольника. У него " . self::SIDES_COUNT . " стороны.";
+    }
+
     public function getA() { return $this->a; }
     public function getB() { return $this->b; }
     public function getC() { return $this->c; }
@@ -82,6 +108,18 @@ class Square extends Figure implements Area
         $this->a = $a;
         $this->color = $color;
         $this->number_side = self::SIDES_COUNT;
+    }
+
+    public function getArea()
+    {
+        $this->area = $this->a * $this->a;
+        return $this->area;
+    }
+
+s
+    public function infoAbout()
+    {
+        return "Это класс квадрата. У него " . self::SIDES_COUNT . " стороны.";
     }
 
     public function getA() { return $this->a; }
