@@ -1,5 +1,5 @@
 <?php
-interface Area()
+interface Area
 {
 
 	public function getArea();
@@ -116,7 +116,7 @@ class Square extends Figure implements Area
         return $this->area;
     }
 
-s
+
     public function infoAbout()
     {
         return "Это класс квадрата. У него " . self::SIDES_COUNT . " стороны.";
@@ -126,6 +126,53 @@ s
 }
 
 
+echo "ПРЯМОУГОЛЬНИКИ<br>";
+$rectangle1 = new Rectangle(10, 7, "синий");
+$rectangle2 = new Rectangle(5, 12, "желтый");
+
+echo "Прямоугольник 1:" . "<br>";
+echo $rectangle1->infoAbout() . "<br>";
+echo "Стороны: a = " . $rectangle1->getA() . ", b = " . $rectangle1->getB() . "<br>";
+echo "Цвет: " . $rectangle1->getColor() . "<br>";
+echo "Площадь: " . $rectangle1->getArea() . " кв.ед." . "<br>". "<br>";
+
+echo "Прямоугольник 2:". "<br>";
+echo $rectangle2->infoAbout() . "<br>";
+echo "Стороны: a = " . $rectangle2->getA() . ", b = " . $rectangle2->getB() . "<br>";
+echo "Цвет: " . $rectangle2->getColor() . "<br>";
+echo "Площадь: " . $rectangle2->getArea() . " кв.ед." . "<br>". "<br>";
+
+echo "ТРЕУГОЛЬНИКИ" . "<br>". "<br>";
+$triangle1 = new Triangle(3, 4, 5, "зеленый");
+$triangle2 = new Triangle(6, 8, 10, "оранжевый");
+
+echo "Треугольник 1:". "<br>";
+echo $triangle1->infoAbout() . "<br>";
+echo "Стороны: a = " . $triangle1->getA() . ", b = " . $triangle1->getB() . ", c = " . $triangle1->getC() . "<br>";
+echo "Цвет: " . $triangle1->getColor() . "<br>";
+echo "Площадь: " . $triangle1->getArea() . " кв.ед." . "<br>". "<br>";
+
+echo "Треугольник 2:". "<br>";
+echo $triangle2->infoAbout() . "<br>";
+echo "Стороны: a = " . $triangle2->getA() . ", b = " . $triangle2->getB() . ", c = " . $triangle2->getC() . "<br>";
+echo "Цвет: " . $triangle2->getColor() . "<br>";
+echo "Площадь: " . $triangle2->getArea() . " кв.ед." . "<br>" . "<br>";
+
+echo " КВАДРАТЫ" . "<br>" . "<br>";
+$square1 = new Square(18, "красный");
+$square2 = new Square(7, "фиолетовый");
+
+echo "Квадрат 1:" .  "<br>";
+echo $square1->infoAbout() . "<br>";
+echo "Сторона: a = " . $square1->getA() . "<br>";
+echo "Цвет: " . $square1->getColor() . "<br>";
+echo "Площадь: " . $square1->getArea() . " кв.ед." . "<br>" . "<br>";
+
+echo "Квадрат 2:" .  "<br>";
+echo $square2->infoAbout() . "<br>";
+echo "Сторона: a = " . $square2->getA() . "<br>";
+echo "Цвет: " . $square2->getColor() . "<br>";
+echo "Площадь: " . $square2->getArea() . " кв.ед." . "<br>";
 
 
 ?>
