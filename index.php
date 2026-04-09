@@ -33,6 +33,20 @@ abstract class Figure
 	abstract public function infoAbout();
 }
 
+class Rectangle extends Figure implements Area
+{
+   s
+}
+
+class Triangle extends Figure implements Area
+{
+  
+}
+
+class Square extends Figure implements Area
+{
+    
+}
 
 
 
