@@ -35,17 +35,23 @@ abstract class Figure
 
 class Rectangle extends Figure implements Area
 {
-   s
+    private $a;
+    private $b;
+    const SIDES_COUNT = 4;
 }
 
 class Triangle extends Figure implements Area
 {
-  
+    private $a;
+    private $b;
+    private $c;
+    const SIDES_COUNT = 3;
 }
 
 class Square extends Figure implements Area
 {
-    
+    private $a;
+    const SIDES_COUNT = 4;
 }
 
 
